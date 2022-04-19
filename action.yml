@@ -21,7 +21,7 @@ description: GitHub action for running tar operations in actions workflows.
 author: NxtLvLSoftware Solutions
 branding:
   icon: settings
-  color: blue
+  color: yellow
 runs:
   using: node12
   main: dist/main.js
