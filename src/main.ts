@@ -55,7 +55,6 @@ export async function run(): Promise<void> {
 	}
 }
 
-
 ;(async () => {
 	await run();
 })().catch(core.setFailed);
