@@ -1,0 +1,27 @@
+inputs:
+  operation:
+    description: |
+      Specifies the tar operation to run. Options are: compress (alias = c) OR extract (alias = x)
+    required: true
+  files:
+    description: |
+      Specifies the files to compress OR a single tar archive to extract. List syntax supported (see example below.)
+    required: true
+  outPath:
+    description: |
+      Specifies the output tar file OR the directory to extract files to.
+    required: true
+  cwd:
+    description: |
+      Specifies the current working directory for operations (will be prepended to files and outPath if they're not absolute.)
+    required: false
+
+name: Tar Action
+description: GitHub action for running tar operations in actions workflows.
+author: NxtLvLSoftware Solutions
+branding:
+  icon: settings
+  color: blue
+runs:
+  using: node12
+  main: dist/main.js
