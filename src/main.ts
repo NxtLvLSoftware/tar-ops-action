@@ -40,14 +40,14 @@ export async function run(): Promise<void> {
 			if (outPath === "") {
 				throw new Error("Output path is required for compression");
 			}
-			await compress(cwd, files, outPath);
+			compress(cwd, files, outPath);
 			break;
 		case "extract":
 		case "x":
 			if (files.length !== 1) {
 				throw new Error("Extracting multiple files is not supported");
 			}
-			await extract(files[0], outPath);
+			extract(files[0], outPath);
 			break;
 		default:
 			throw new Error(`Unknown operation: ${operation}`);
