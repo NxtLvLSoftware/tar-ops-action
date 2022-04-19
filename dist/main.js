@@ -10,7 +10,7 @@ const path = require("path");
  */
 function compress(cwd, files, outPath) {
     tar
-        .c({ cwd: cwd, gzip: true, sync: true }, files)
+        .c({ C: cwd, z: true, sync: true }, files)
         .pipe(fs.createWriteStream(outPath));
 }
 /**
@@ -18,7 +18,7 @@ function compress(cwd, files, outPath) {
  */
 function extract(file, outPath) {
     tar
-        .x({ cwd: outPath, sync: true, file: file });
+        .x({ C: outPath, sync: true, f: file });
 }
 /**
  * Run the action, detecting the tar operation and sanitizing inputs.
