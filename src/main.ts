@@ -8,7 +8,7 @@ const path = require("path");
  */
 function compress(cwd: string, files: string[], outPath: string): void {
 	tar
-		.c({cwd: cwd, gzip: true, sync: true}, files)
+		.c({C: cwd, z: true, sync: true}, files)
 		.pipe(fs.createWriteStream(outPath));
 }
 
@@ -17,7 +17,7 @@ function compress(cwd: string, files: string[], outPath: string): void {
  */
 function extract(file: string, outPath: string): void {
 	tar
-		.x({ cwd: outPath, sync: true, file: file });
+		.x({ C: outPath, sync: true, f: file });
 }
 
 /**
