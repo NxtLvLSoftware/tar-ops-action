@@ -15,10 +15,9 @@ function compress(cwd: string, files: string[], outPath: string): void {
 /**
  * Extract a tar file to the provided directory.
  */
-function extract(cwd: string, file: string, outPath: string): void {
+function extract(file: string, outPath: string): void {
 	tar
-		.x({ cwd: cwd, sync: true, file: file })
-		.pipe(fs.createWriteStream(outPath));
+		.x({ cwd: outPath, sync: true, file: file });
 }
 
 /**
@@ -48,7 +47,7 @@ export async function run(): Promise<void> {
 			if (files.length !== 1) {
 				throw new Error("Extracting multiple files is not supported");
 			}
-			await extract(cwd, files[0], outPath);
+			await extract(files[0], outPath);
 			break;
 		default:
 			throw new Error(`Unknown operation: ${operation}`);
