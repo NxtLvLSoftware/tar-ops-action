@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - uses: nxtlvlsoftware/tar-ops-action@v1
         with:
           operation: compress
@@ -31,7 +31,7 @@ jobs:
             My-Repo/node_modules
           outPath: My-Repo-Sources.tar.gz
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: My-Repo-Sources-Compressed
           path: My-Repo-Sources.tar.gz
