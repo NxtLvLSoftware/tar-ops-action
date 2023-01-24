@@ -11,6 +11,6 @@
   "scripts": {
     "build": "ncc build --source-map src/main.ts",
     "watch": "ncc build --source-map --watch src/main.ts",
-    "release": "ncc build -m src/main.ts && git add -f dist/index.js"
+    "release": "ncc build -m src/main.ts"
   }
 }
