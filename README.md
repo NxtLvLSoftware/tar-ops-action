@@ -58,5 +58,8 @@ jobs:
           outPath: ./My-Repo-Sources
 ```
 
-# Use cases
+## Use cases
 Allows checking-out your repo, running dependency management commands, code linting and other build/compile time steps, then re-using the processed code across multiple steps without running all the prerequisites again.
+
+## License
+`nxtlvlsoftware/tar-ops-action` is open-sourced software licensed under the [MIT license](LICENSE).
