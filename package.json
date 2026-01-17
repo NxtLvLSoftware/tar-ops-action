@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@actions/core": "^1.2.6",
-    "tar": "^6.1.11"
+    "tar": "^7.5.3"
   },
   "devDependencies": {
     "@types/node": "^14.11.2",
